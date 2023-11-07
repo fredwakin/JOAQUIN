@@ -1,0 +1,33 @@
+<p>Create Info</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress1">Title </label>
+        <input type="text" class="form-control" id="inputAddress1" placeholder="Insert Title" formControlName="title">
+      </div>
+      <br>
+      <div class="form-group col-md-6">
+        <label for="inputAddress2">Image</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Insert Image URL" formControlName="image">
+        <img class="img-responsive" src="{{ form.value.image }}"/>
+      </div>
+      <br>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress3">Description</label>
+      <textarea type="text" class="form-control" id="inputAddress3" placeholder="Insert Description" formControlName="description">
+      </textarea>
+    </div>
+    <br>
+    
+    <br>
+    <!-- <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Date</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div> -->
+      <br>
+    
+    <button type="submit" (click)="onSubmit()" class="btn btn-success" [disabled]="form.invalid">Save</button> &nbsp;|&nbsp; &nbsp;
+    <button type="reset" class="btn btn-primary">Clear</button>
+  </form>
